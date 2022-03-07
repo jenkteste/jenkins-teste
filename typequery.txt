@@ -1,0 +1,16 @@
+CREATE FUNCTION DtsMinutos(@min int, @dti datetime, @dtf datetime)
+RETURNS @tbl TABLE(dt datetime)
+AS
+BEGIN
+    WHILE @dti <= @dtf
+    BEGIN
+      INSERT INTO @tbl(dt) VALUES (@dti)
+      SET @dti = DATEADD(MINUTE,@min,@dti)
+    END
+    RETURN
+END;
+
+CREATE PROCEDURE SelectAllCustomers @City nvarchar(30)
+AS
+SELECT * FROM Customers WHERE City = @City
+GO;
