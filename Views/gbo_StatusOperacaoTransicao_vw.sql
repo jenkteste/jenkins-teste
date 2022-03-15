@@ -15,3 +15,4 @@ SELECT distinct
 	on StatusOperacaoTransicao.mgbo_StatusOperacaoOrigem = StatusOperacaoOrigem.StatusOperacaoSistemaLegado_ID
  inner join dbo.gbo_StatusOperacao_vw StatusOperacaoDestino With (nolock)
 	on StatusOperacaoTransicao.mgbo_StatusOperacaoDestino = StatusOperacaoDestino.StatusOperacaoSistemaLegado_ID
+gbo_TesteDependencia
